@@ -1,0 +1,128 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "fira code", Helvetica, sans-serif;
+  animation: opening 1.5s ease-in-out forwards;
+  animation-name: slidein;
+  overflow-x: hidden;
+}
+
+@keyframes slidein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+    margin-top: 0px;
+  }
+}
+
+nav {
+  position: fixed;
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.151);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 400;
+  margin-left: 5vw;
+  color: rgb(118, 115, 133);
+  cursor: pointer;
+  transition: 0.25s ease-in-out;
+}
+
+.logo:hover {
+  color: rgb(150, 146, 168);
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  margin-right: 5vw;
+  gap: 2vw;
+}
+
+li {
+  display: inline;
+  position: relative;
+  color: rgb(118, 115, 133);
+  text-decoration: none;
+}
+.nav-links {
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+
+.nav-links:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -10px;
+  width: 0%;
+  left: 0px;
+  height: 5px;
+  transition: 0.45s cubic-bezier(0.72, -0.01, 0.19, 0.92);
+  background: rgb(177, 172, 199);
+}
+
+.nav-links:hover:after {
+  width: 100%;
+  background-color: rgb(177, 172, 199);
+}
+.nav-links:hover {
+  color: rgb(177, 172, 199);
+  transition: 0.45s cubic-bezier(0.72, -0.01, 0.19, 0.92);
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Location of the image + optional subtle overlay for better contrast*/
+  background-image: url(_img/background.jpg);
+
+  /* Background image is centered vertically and horizontally at all times */
+  background-position: center center;
+
+  /* Background image doesn't tile */
+  background-repeat: no-repeat;
+
+  /* Background image is fixed in the viewport so that it doesn't move when 
+	   the content's height is greater than the image's height */
+  background-attachment: fixed;
+
+  /* This is what makes the background image rescale based
+	   on the container's size */
+  background-size: cover;
+  /* object-fit: cover; */
+
+  /* Set a background color that will be displayed
+	   while the background image is loading */
+  background-color: #e1efec;
+}
+
+h1 {
+  font-size: 10vw;
+  color: rgb(85, 83, 95);
+  text-transform: uppercase;
+  transition: 0.5s ease-in-out;
+}
+
+h1:hover {
+  color: rgb(109, 104, 136);
+  font-size: 10.2vw;
+  cursor: pointer;
+}
